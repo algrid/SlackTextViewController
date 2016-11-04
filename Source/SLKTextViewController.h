@@ -48,6 +48,14 @@ typedef NS_ENUM(NSUInteger, SLKKeyboardStatus) {
 NS_CLASS_AVAILABLE_IOS(7_0) @interface SLKTextViewController : UIViewController <SLKTextViewDelegate, UITableViewDelegate, UITableViewDataSource,
                                                                                 UICollectionViewDelegate, UICollectionViewDataSource,
                                                                                 UIGestureRecognizerDelegate, UIAlertViewDelegate>
+{
+    // Expose these ivars to subclasses
+    
+    @protected
+    NSString * _foundPrefix;
+    NSString * _foundWord;
+    NSRange _foundPrefixRange;
+}
 
 /** The main table view managed by the controller object. Created by default initializing with -init or initWithNibName:bundle: */
 @property (nonatomic, readonly) UITableView *_Nullable tableView;
